@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		11F1E44C22304DF5005051CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1E44B22304DF5005051CE /* AppDelegate.swift */; };
-		11F1E44E22304DF5005051CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1E44D22304DF5005051CE /* ViewController.swift */; };
+		11F1E44E22304DF5005051CE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1E44D22304DF5005051CE /* ProfileViewController.swift */; };
 		11F1E45122304DF5005051CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F1E44F22304DF5005051CE /* Main.storyboard */; };
 		11F1E45322304DF9005051CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11F1E45222304DF9005051CE /* Assets.xcassets */; };
 		11F1E45622304DF9005051CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F1E45422304DF9005051CE /* LaunchScreen.storyboard */; };
+		11F1E4652230503B005051CE /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1E4642230503B005051CE /* Localization.swift */; };
+		11F1E46722305177005051CE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1E46622305177005051CE /* UIColorExtension.swift */; };
+		11F1E46B22305798005051CE /* NavigationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1E46A22305798005051CE /* NavigationProfileViewController.swift */; };
+		11F1E46E22305B14005051CE /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F1E46D22305B14005051CE /* Profile.storyboard */; };
+		11F1E47222305B92005051CE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1E47122305B92005051CE /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11F1E44822304DF5005051CE /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F1E44B22304DF5005051CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11F1E44D22304DF5005051CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11F1E44D22304DF5005051CE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		11F1E45022304DF5005051CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11F1E45222304DF9005051CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11F1E45522304DF9005051CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11F1E45722304DF9005051CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F1E4642230503B005051CE /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		11F1E46622305177005051CE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		11F1E46A22305798005051CE /* NavigationProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationProfileViewController.swift; sourceTree = "<group>"; };
+		11F1E46D22305B14005051CE /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		11F1E47122305B92005051CE /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,107 @@
 		11F1E44A22304DF5005051CE /* RandomUser */ = {
 			isa = PBXGroup;
 			children = (
-				11F1E44B22304DF5005051CE /* AppDelegate.swift */,
-				11F1E44D22304DF5005051CE /* ViewController.swift */,
+				11F1E46822305348005051CE /* Globals */,
+				11F1E46022304E45005051CE /* System */,
+				11F1E46222305019005051CE /* Extension */,
+				11F1E45F22304E3C005051CE /* ViewModel */,
+				11F1E45E22304E36005051CE /* View */,
+				11F1E46122304E5B005051CE /* Model */,
+				11F1E45D22304E1A005051CE /* Controllers */,
 				11F1E44F22304DF5005051CE /* Main.storyboard */,
 				11F1E45222304DF9005051CE /* Assets.xcassets */,
 				11F1E45422304DF9005051CE /* LaunchScreen.storyboard */,
 				11F1E45722304DF9005051CE /* Info.plist */,
 			);
 			path = RandomUser;
+			sourceTree = "<group>";
+		};
+		11F1E45D22304E1A005051CE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11F1E46922305756005051CE /* Navigation */,
+				11F1E46C223059B2005051CE /* Profile */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		11F1E45E22304E36005051CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11F1E45F22304E3C005051CE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		11F1E46022304E45005051CE /* System */ = {
+			isa = PBXGroup;
+			children = (
+				11F1E47022305B70005051CE /* Theme */,
+				11F1E4632230501F005051CE /* Localization */,
+				11F1E44B22304DF5005051CE /* AppDelegate.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		11F1E46122304E5B005051CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11F1E46222305019005051CE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				11F1E46622305177005051CE /* UIColorExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		11F1E4632230501F005051CE /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				11F1E4642230503B005051CE /* Localization.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		11F1E46822305348005051CE /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
+		11F1E46922305756005051CE /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				11F1E46A22305798005051CE /* NavigationProfileViewController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		11F1E46C223059B2005051CE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				11F1E44D22304DF5005051CE /* ProfileViewController.swift */,
+				11F1E46D22305B14005051CE /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		11F1E47022305B70005051CE /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				11F1E47122305B92005051CE /* Theme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +227,7 @@
 			files = (
 				11F1E45622304DF9005051CE /* LaunchScreen.storyboard in Resources */,
 				11F1E45322304DF9005051CE /* Assets.xcassets in Resources */,
+				11F1E46E22305B14005051CE /* Profile.storyboard in Resources */,
 				11F1E45122304DF5005051CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +239,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11F1E44E22304DF5005051CE /* ViewController.swift in Sources */,
+				11F1E44E22304DF5005051CE /* ProfileViewController.swift in Sources */,
 				11F1E44C22304DF5005051CE /* AppDelegate.swift in Sources */,
+				11F1E46B22305798005051CE /* NavigationProfileViewController.swift in Sources */,
+				11F1E47222305B92005051CE /* Theme.swift in Sources */,
+				11F1E4652230503B005051CE /* Localization.swift in Sources */,
+				11F1E46722305177005051CE /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
