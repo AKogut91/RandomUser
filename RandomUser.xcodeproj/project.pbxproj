@@ -22,6 +22,8 @@
 		11F1E479223063DE005051CE /* GlobalCellid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1E478223063DE005051CE /* GlobalCellid.swift */; };
 		11F1E47B223065FB005051CE /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1E47A223065FB005051CE /* UITableViewExtension.swift */; };
 		11F1E47D22306692005051CE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1E47C22306692005051CE /* UIImageViewExtension.swift */; };
+		11F1E48122306AE9005051CE /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1E47F22306AE9005051CE /* UserInfoTableViewCell.swift */; };
+		11F1E48222306AE9005051CE /* UserInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F1E48022306AE9005051CE /* UserInfoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		11F1E478223063DE005051CE /* GlobalCellid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCellid.swift; sourceTree = "<group>"; };
 		11F1E47A223065FB005051CE /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		11F1E47C22306692005051CE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		11F1E47F22306AE9005051CE /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		11F1E48022306AE9005051CE /* UserInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		11F1E45E22304E36005051CE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11F1E47E22306A9B005051CE /* UserInfoTableViewCell */,
 				11F1E47322306115005051CE /* NameAndPictureTableViewCell */,
 			);
 			path = View;
@@ -190,6 +195,15 @@
 			path = NameAndPictureTableViewCell;
 			sourceTree = "<group>";
 		};
+		11F1E47E22306A9B005051CE /* UserInfoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				11F1E47F22306AE9005051CE /* UserInfoTableViewCell.swift */,
+				11F1E48022306AE9005051CE /* UserInfoTableViewCell.xib */,
+			);
+			path = UserInfoTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -252,6 +266,7 @@
 				11F1E45322304DF9005051CE /* Assets.xcassets in Resources */,
 				11F1E46E22305B14005051CE /* Profile.storyboard in Resources */,
 				11F1E45122304DF5005051CE /* Main.storyboard in Resources */,
+				11F1E48222306AE9005051CE /* UserInfoTableViewCell.xib in Resources */,
 				11F1E4772230612D005051CE /* NameAndPictureTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +282,7 @@
 				11F1E44E22304DF5005051CE /* ProfileViewController.swift in Sources */,
 				11F1E44C22304DF5005051CE /* AppDelegate.swift in Sources */,
 				11F1E46B22305798005051CE /* NavigationProfileViewController.swift in Sources */,
+				11F1E48122306AE9005051CE /* UserInfoTableViewCell.swift in Sources */,
 				11F1E479223063DE005051CE /* GlobalCellid.swift in Sources */,
 				11F1E4762230612D005051CE /* NameAndPictureTableViewCell.swift in Sources */,
 				11F1E47222305B92005051CE /* Theme.swift in Sources */,

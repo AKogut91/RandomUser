@@ -11,5 +11,6 @@ import Foundation
 final class GlobalCellid {
     
     static let nameAndPictureTableViewCell = "NameAndPictureTableViewCell"
+    static let userInfoTableViewCell = "UserInfoTableViewCell"
 
 }

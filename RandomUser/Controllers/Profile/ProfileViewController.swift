@@ -17,7 +17,6 @@ extension ProfileViewController {
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak private var tableView: UITableView!
-    
     private let cellSections:[CellType] = [.initials, .adress, .email, .cellPhone, .registered]
     
     override func loadView() {
@@ -29,7 +28,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         setTableView()
     }
-    
 }
 
 //MARK: - TableView
@@ -38,10 +36,11 @@ extension ProfileViewController {
     func setTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.separatorInset.right = 20
+        tableView.registerCellWithNib(cellID: GlobalCellid.nameAndPictureTableViewCell)
+        tableView.registerCellWithNib(cellID: GlobalCellid.userInfoTableViewCell)
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.registerCellWithNib(cellID: GlobalCellid.nameAndPictureTableViewCell)
+        tableView.separatorStyle = .none
     }
 }
 
@@ -72,13 +71,21 @@ extension ProfileViewController: UITableViewDataSource ,UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: GlobalCellid.nameAndPictureTableViewCell, for: indexPath) as! NameAndPictureTableViewCell
             return cell
         case .adress:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: GlobalCellid.userInfoTableViewCell, for: indexPath) as! UserInfoTableViewCell
+            cell.configuration(infoKey: Localization.UserInfoKeys.postalAdress, infoValue: "")
+            return cell
         case .email:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: GlobalCellid.userInfoTableViewCell, for: indexPath) as! UserInfoTableViewCell
+            cell.configuration(infoKey: Localization.UserInfoKeys.email, infoValue: "")
+            return cell
         case .cellPhone:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: GlobalCellid.userInfoTableViewCell, for: indexPath) as! UserInfoTableViewCell
+            cell.configuration(infoKey: Localization.UserInfoKeys.cell, infoValue: "")
+            return cell
         case .registered:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: GlobalCellid.userInfoTableViewCell, for: indexPath) as! UserInfoTableViewCell
+            cell.configuration(infoKey: Localization.UserInfoKeys.registered, infoValue: "")
+            return cell
         }
     }
 
@@ -92,7 +99,7 @@ extension ProfileViewController: UITableViewDataSource ,UITableViewDelegate {
         
         switch cellRows{
         case .initials:
-            return 325
+            return 300
         default:
             return UITableView.automaticDimension
         }
