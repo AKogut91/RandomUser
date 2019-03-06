@@ -23,6 +23,5 @@ class NavigationProfileViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
 }
 
