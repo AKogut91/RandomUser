@@ -14,6 +14,14 @@ extension UIColor {
     static func navigationColor() -> UIColor {
         return UIColor().colorFromHexString("293134")
     }
+    
+    static func backgroundColor() -> UIColor {
+        return UIColor().colorFromHexString("FAFBFC")
+    }
+    
+    static func errorLabelColor() -> UIColor {
+        return UIColor().colorFromHexString("8A99A1")
+    }
 }
 
 //MARK: - HEX Color

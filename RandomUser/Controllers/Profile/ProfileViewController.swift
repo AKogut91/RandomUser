@@ -18,15 +18,75 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak private var tableView: UITableView!
     private let cellSections:[CellType] = [.initials, .adress, .email, .cellPhone, .registered]
+    private var helperView: HelperView!
+    var viewModel: ProfileViewModel!
     
     override func loadView() {
         super.loadView()
         setNavigation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setHelperView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableView()
+        self.view.backgroundColor = UIColor.backgroundColor()
+        notification()
+        self.tableView.alpha = 0
+        startLoadingUser()
+    }
+    
+    func startLoadingUser() {
+        viewModel = ProfileViewModel(complition: {
+            UIView.animate(withDuration: 0.33, animations: { [weak self] in
+                self!.tableView.alpha = 1
+                self!.view.backgroundColor = UIColor.backgroundColor()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [weak self] in
+                    self!.setTableView()
+                    self!.removeHelperView()
+                })
+            })
+        })
+    }
+}
+
+//MARK: - Notification
+extension ProfileViewController {
+    
+    func notification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(presentError), name: .requestError, object: nil)
+    }
+    
+    @objc func presentError() {
+        helperView.retryButton.addTarget(self, action: #selector(reloadTable), for: .touchUpInside)
+        helperView.activityIndicator.stopAnimating()
+        helperView.activityIndicator.isHidden = true
+        helperView.retryButton.isHidden = false
+        helperView.showErrorlabel()
+    }
+}
+
+//MARK: - Loading View with activity indicator
+extension ProfileViewController {
+    
+    func setHelperView() {
+        helperView = HelperView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        view.insertSubview(helperView, aboveSubview: tableView)
+        helperView.activityIndicator.startAnimating()
+    }
+    
+    func removeHelperView() {
+        helperView.activityIndicator.stopAnimating()
+        helperView.removeFromSuperview()
+    }
+    
+    @objc func reloadTable() {
+        helperView.removeFromSuperview()
+        setHelperView()
+        startLoadingUser()
     }
 }
 
@@ -66,25 +126,40 @@ extension ProfileViewController: UITableViewDataSource ,UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellRows = cellSections[indexPath.section]
         
+        let userData = viewModel.information
+        
         switch cellRows {
         case .initials:
             let cell = tableView.dequeueReusableCell(withIdentifier: GlobalCellid.nameAndPictureTableViewCell, for: indexPath) as! NameAndPictureTableViewCell
+            cell.configure(avatar: (userData?.userInitial.image)!,
+                           firstName: (userData?.userInitial.firstName)!,
+                           lastName: (userData?.userInitial.lastName)!,
+                           nickName: (userData?.userInitial.nickName)!)
             return cell
+            
         case .adress:
             let cell = tableView.dequeueReusableCell(withIdentifier: GlobalCellid.userInfoTableViewCell, for: indexPath) as! UserInfoTableViewCell
-            cell.configuration(infoKey: Localization.UserInfoKeys.postalAdress, infoValue: "")
+            cell.configuration(infoKey: Localization.UserInfoKeys.postalAdress,
+                               infoValue: (userData?.userInfo.postalAddress)!)
             return cell
+            
         case .email:
             let cell = tableView.dequeueReusableCell(withIdentifier: GlobalCellid.userInfoTableViewCell, for: indexPath) as! UserInfoTableViewCell
-            cell.configuration(infoKey: Localization.UserInfoKeys.email, infoValue: "")
+            cell.configuration(infoKey: Localization.UserInfoKeys.email,
+                               infoValue: (userData?.userInfo.email)!)
             return cell
+            
         case .cellPhone:
             let cell = tableView.dequeueReusableCell(withIdentifier: GlobalCellid.userInfoTableViewCell, for: indexPath) as! UserInfoTableViewCell
-            cell.configuration(infoKey: Localization.UserInfoKeys.cell, infoValue: "")
+            cell.configuration(infoKey: Localization.UserInfoKeys.cell,
+                               infoValue: (userData?.userInfo.cell)!)
             return cell
+            
         case .registered:
-            let cell = tableView.dequeueReusableCell(withIdentifier: GlobalCellid.userInfoTableViewCell, for: indexPath) as! UserInfoTableViewCell
-            cell.configuration(infoKey: Localization.UserInfoKeys.registered, infoValue: "")
+            let cell = tableView.dequeueReusableCell(withIdentifier: GlobalCellid.userInfoTableViewCell,
+                                                     for: indexPath) as! UserInfoTableViewCell
+            cell.configuration(infoKey: Localization.UserInfoKeys.registered,
+                               infoValue:(userData?.userInfo.register)! )
             return cell
         }
     }

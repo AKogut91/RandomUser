@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class NameAndPictureTableViewCell: UITableViewCell {
 
@@ -17,16 +18,14 @@ class NameAndPictureTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.avatar.backgroundColor = .red
         self.avatar.setCircle()
         selectionStyle = .none
     }
 
-    func configure(avatar: UIImage, firstName: String, lastName: String, nickName: String) {
-        self.avatar.image = avatar
+    func configure(avatar: String, firstName: String, lastName: String, nickName: String) {
+        self.avatar.af_setImage(withURL: URL(string: avatar)!)
         self.firstName.text = firstName
         self.lastName.text = lastName
         self.nickName.text = nickName
     }
-    
 }

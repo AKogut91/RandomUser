@@ -15,6 +15,8 @@ class UserInfoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.infoValue.numberOfLines = 0
+        
     }
 
     override func prepareForReuse() {

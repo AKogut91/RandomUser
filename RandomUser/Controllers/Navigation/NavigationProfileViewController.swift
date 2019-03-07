@@ -10,7 +10,6 @@ import UIKit
 
 class NavigationProfileViewController: UINavigationController {
 
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }

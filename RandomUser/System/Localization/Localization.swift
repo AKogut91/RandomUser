@@ -25,4 +25,16 @@ final class Localization {
         ///Зарегистрированный
         static let registered = NSLocalizedString("Registered", comment: "Зарегистрированный")
     }
+    
+    public struct Loading {
+        ///Загрузка
+        static let loading = NSLocalizedString("Loading", comment: "Загрузка")
+    }
+    
+    public struct Errors {
+        ///Ошибка загрузки
+        static let failedToLoading = NSLocalizedString("Failed to load", comment: "Ошибка загрузки")
+        ///Нажмите, чтобы повторить попытку
+        static let tapToRetry = NSLocalizedString("Tap to retry", comment: "Нажмите, чтобы повторить попытку")
+    }
 }
