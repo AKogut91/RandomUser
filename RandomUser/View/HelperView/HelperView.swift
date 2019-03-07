@@ -34,8 +34,14 @@ class HelperView: UIView {
         loadingLabel.text = Localization.Loading.loading
         loadingLabel.textColor = UIColor.errorLabelColor()
         activityIndicator.color = UIColor.errorLabelColor()
-        retryButton.isHidden = true
+        setButton()
+    }
+    
+    private func setButton() {
         retryButton.setTitle(Localization.Errors.tapToRetry, for: .normal)
+        retryButton.isHidden = true
+        retryButton.layer.cornerRadius = 6
+        retryButton.clipsToBounds = true
     }
     
     func showErrorlabel() {
