@@ -35,14 +35,12 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.backgroundColor()
         notification()
-        self.tableView.alpha = 0
         startLoadingUser()
     }
     
     func startLoadingUser() {
         viewModel = ProfileViewModel(complition: {
             UIView.animate(withDuration: 0.33, animations: { [weak self] in
-                self!.tableView.alpha = 1
                 self!.view.backgroundColor = UIColor.backgroundColor()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [weak self] in
                     self!.setTableView()
@@ -73,8 +71,17 @@ extension ProfileViewController {
 extension ProfileViewController {
     
     func setHelperView() {
-        helperView = HelperView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        helperView = HelperView(frame: .zero)
+        helperView.translatesAutoresizingMaskIntoConstraints = false
         view.insertSubview(helperView, aboveSubview: tableView)
+        NSLayoutConstraint.activate([
+            
+            helperView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            helperView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            helperView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            helperView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            ])
+    
         helperView.activityIndicator.startAnimating()
     }
     

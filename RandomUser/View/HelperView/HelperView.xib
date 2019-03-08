@@ -19,25 +19,23 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VCW-FL-y7R">
                     <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                 </activityIndicatorView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-gT-3Db">
-                    <rect key="frame" x="0.0" y="289.5" width="375" height="19.5"/>
-                    <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="iVU-JE-BgE"/>
-                    </constraints>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-gT-3Db">
+                    <rect key="frame" x="165" y="295" width="44" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-3a-x0W">
-                    <rect key="frame" x="100" y="318.5" width="175" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-3a-x0W">
+                    <rect key="frame" x="149.5" y="324" width="76" height="28"/>
                     <color key="backgroundColor" red="0.53932100534439087" green="0.59965747594833374" blue="0.63315141201019287" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <inset key="contentEdgeInsets" minX="15" minY="5" maxX="15" maxY="5"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -45,17 +43,15 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QHT-3a-x0W" secondAttribute="trailing" constant="100" id="0ko-fm-DE2"/>
-                <constraint firstItem="VCW-FL-y7R" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Psp-PZ-lBM"/>
-                <constraint firstItem="VCW-FL-y7R" firstAttribute="top" secondItem="7iW-gT-3Db" secondAttribute="bottom" constant="14.5" id="T7x-fL-2Zm"/>
-                <constraint firstItem="VCW-FL-y7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eCo-Rt-dbY"/>
-                <constraint firstItem="QHT-3a-x0W" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="100" id="ezf-2f-OkZ"/>
-                <constraint firstItem="7iW-gT-3Db" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="kzZ-uZ-eII"/>
-                <constraint firstItem="QHT-3a-x0W" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nwA-xt-OI9"/>
-                <constraint firstItem="7iW-gT-3Db" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rK4-Ix-9pl"/>
-                <constraint firstItem="QHT-3a-x0W" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="wgv-is-LK9"/>
+                <constraint firstItem="QHT-3a-x0W" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="4.5" id="ALI-fS-cYj"/>
+                <constraint firstItem="7iW-gT-3Db" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="CQM-la-e3q"/>
+                <constraint firstItem="VCW-FL-y7R" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="PWY-Y0-fTc"/>
+                <constraint firstItem="QHT-3a-x0W" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="W9q-ga-m1z"/>
+                <constraint firstItem="VCW-FL-y7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eCD-t1-cse"/>
+                <constraint firstItem="7iW-gT-3Db" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-28.5" id="zOd-yd-etL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-127.2" y="155.17241379310346"/>
         </view>
     </objects>
 </document>
