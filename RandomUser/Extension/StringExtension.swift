@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 extension StringProtocol {
     var firstUppercased: String {
         guard let first = first else { return "" }

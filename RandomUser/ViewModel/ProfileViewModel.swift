@@ -66,7 +66,8 @@ class ProfileViewModel {
                                                   nickName: user.login.username.capitalized,
                                                   image: user.picture.medium),
                                                   userInfo: ProfileViewModel.UserInfo.init(
-                                                    postalAddress: postal.capitalized, email: user.email, cell: user.cell, register: DateService().makeDate(json: user.registered.date, timeFormat: .monthDayYear)))
+                                                    postalAddress: postal.capitalized, email: user.email, cell: user.cell,
+                                                    register: DateService().makeDate(json: user.registered.date, timeFormat: .monthDayYear)))
         }
     
         complition()

@@ -38,8 +38,13 @@ class DateService {
         let date = dateFormatter.date(from: fixedTimeForFormatter)
         
         dateFormatter.dateFormat = timeFormat.rawValue
-        let newDate = dateFormatter.string(from: date!)
         
-        return newDate
+        var mewDate = String()
+        if let unwrapDate = date {
+            mewDate = dateFormatter.string(from: unwrapDate)
+        } else {
+            mewDate = ""
+        }
+        return mewDate
     }
 }
